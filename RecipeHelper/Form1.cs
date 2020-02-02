@@ -34,8 +34,22 @@ namespace RecipeHelper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            txtCelsius.Text = (Int) ((txtFahrenheit.Text - 32) * 5 / 9);
-            txtFahrenheit.Text = 
+            double temp;
+            double Fahrenheit;//declare variables temp and Fahrenheit
+
+            temp = double.Parse(txtCelsius.Text);
+            if(btnConvertToFahrenheit.Text == "Fahrenheit") 
+            {
+                Fahrenheit = ((temp - 32) / 1.8);
+                txtFahrenheit.Text = Fahrenheit.ToString();//convert text to string
+            }
+            
+
+        }
+
+        private void btnConvertToCups_Click(object sender, EventArgs e)
+        {
+            double 
         }
     }
 }
