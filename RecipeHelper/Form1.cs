@@ -49,7 +49,17 @@ namespace RecipeHelper
 
         private void btnConvertToCups_Click(object sender, EventArgs e)
         {
-            double 
+            int measurement;
+            int Cups;
+
+            measurement = Int32.Parse(txtMillilitres.Text);
+            if (btnConvertToCups.Text == "Cups")
+            {
+                Cups = (measurement / 250);
+                txtCups.Text = Cups.ToString();//convert text to string
+            }
         }
+         
     }
 }
+
