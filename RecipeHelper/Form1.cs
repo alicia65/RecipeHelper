@@ -34,26 +34,28 @@ namespace RecipeHelper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double temp;
-            double Fahrenheit;//declare variables temp and Fahrenheit
+            double temp;//declare variable temp
+            double Fahrenheit;//declare variable Fahrenheit
 
-            temp = double.Parse(txtCelsius.Text);
-            if(btnConvertToFahrenheit.Text == "Fahrenheit") 
+            if (double.TryParse(txtCelsius.Text, out Fahrenheit))
+           
             {
-                Fahrenheit = ((temp - 32) / 1.8);
+                Fahrenheit = temp * 9/5 + 32;//convert Celsius to Fahrenheit
+                //Fahrenheit = ((temp - 32) / 1.8);
                 txtFahrenheit.Text = Fahrenheit.ToString();//convert text to string
             }
-            
-
+            else 
+            {
+                MessageBox.Show("Enter only number", "Error");
+            }
         }
 
         private void btnConvertToCups_Click(object sender, EventArgs e)
         {
-            int measurement;
-            int Cups;
+            double measurement;
+            double Cups;
 
-            measurement = Int32.Parse(txtMillilitres.Text);
-            if (btnConvertToCups.Text == "Cups")
+            if (double.TryParse(txtMillilitres.Text, out Cups))
             {
                 Cups = (measurement / 250);
                 txtCups.Text = Cups.ToString();//convert text to string
