@@ -34,15 +34,15 @@ namespace RecipeHelper
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double temp;//declare variable temp
+            double temp = 0;//declare variable temp which has value zero
             double Fahrenheit;//declare variable Fahrenheit
 
-            if (double.TryParse(txtCelsius.Text, out Fahrenheit))
+            if (double.TryParse(txtCelsius.Text, out temp))
            
             {
                 Fahrenheit = temp * 9/5 + 32;//convert Celsius to Fahrenheit
                 //Fahrenheit = ((temp - 32) / 1.8);
-                txtFahrenheit.Text = Fahrenheit.ToString();//convert text to string
+                txtFahrenheit.Text = Fahrenheit.ToString("f2");//convert text to string
             }
             else 
             {
@@ -52,16 +52,24 @@ namespace RecipeHelper
 
         private void btnConvertToCups_Click(object sender, EventArgs e)
         {
-            double measurement;
+            double measurement = 0;
             double Cups;
 
-            if (double.TryParse(txtMillilitres.Text, out Cups))
+            if (double.TryParse(txtMillilitres.Text, out measurement))
             {
-                Cups = (measurement / 250);
-                txtCups.Text = Cups.ToString();//convert text to string
+                Cups = (measurement/263.59);
+                txtCups.Text = Cups.ToString("f2");//convert text to string
+            }
+            else 
+            {
+                MessageBox.Show("Enter only number", "Error");//
             }
         }
-         
+
+        private void txtCelsius_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -92,6 +92,7 @@
             this.txtCelsius.Name = "txtCelsius";
             this.txtCelsius.Size = new System.Drawing.Size(123, 30);
             this.txtCelsius.TabIndex = 4;
+            this.txtCelsius.TextChanged += new System.EventHandler(this.txtCelsius_TextChanged);
             // 
             // txtMillilitres
             // 
@@ -129,7 +130,7 @@
             this.btnConvertToFahrenheit.Name = "btnConvertToFahrenheit";
             this.btnConvertToFahrenheit.Size = new System.Drawing.Size(151, 56);
             this.btnConvertToFahrenheit.TabIndex = 8;
-            this.btnConvertToFahrenheit.Text = "Convert to Fahrenheit";
+            this.btnConvertToFahrenheit.Text = "&Convert to Fahrenheit";
             this.btnConvertToFahrenheit.UseVisualStyleBackColor = true;
             this.btnConvertToFahrenheit.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -141,12 +142,13 @@
             this.btnConvertToCups.Name = "btnConvertToCups";
             this.btnConvertToCups.Size = new System.Drawing.Size(140, 56);
             this.btnConvertToCups.TabIndex = 9;
-            this.btnConvertToCups.Text = "Convert to Cups";
+            this.btnConvertToCups.Text = "&Convert to Cups";
             this.btnConvertToCups.UseVisualStyleBackColor = true;
             this.btnConvertToCups.Click += new System.EventHandler(this.btnConvertToCups_Click);
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnConvertToFahrenheit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 275);
